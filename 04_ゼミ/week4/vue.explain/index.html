@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vueを勉強するまえに</title>
+  </head>
+  <body>
+    <h1>Vanilla JSで作るカウンター</h1>
+    <div id="count">0</div>
+    <button id="count-up">＋１</button>
+
+    <script>
+      const countEl = document.getElementById("count");
+      const countUpButton = document.getElementById("count-up");
+      let count = 0;
+
+      countUpButton.onclick = function () {
+        count += 1;
+        countEl.textContent = count;
+      };
+    </script>
+
+    <h1>Vueで作るカウンター</h1>
+    <div id="app">
+      <div>{{ count }}</div>
+      <button v-on:click="countUp">＋１</button>
+    </div>
+    <script src="https://unpkg.com/vue@3.2.20"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        //上のdata()は省略形で書いてある！以下が本来の姿！
+        // data: function(){
+        //   return {
+        //     count: 0,
+        //   };
+        // },
+
+        methods: {
+          countUp: function () {
+            this.count += 1;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

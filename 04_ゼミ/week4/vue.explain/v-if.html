@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="v-if">
+        <h3>v-if</h3>
+        <button v-on:click="hyouji">表示する</button>
+        <div v-if="seen">みつかった！</div>
+      </section>
+</body>
+<script src="https://unpkg.com/vue@3.2.20"></script>
+
+<script>
+    //v-if は、条件によって表示する内容を切り替えるための機能
+    
+    Vue.createApp({
+    data() {
+        return {
+        seen: false,
+        }
+    },
+     methods: {
+        hyouji: function() {
+        this.seen = true
+        },
+    },
+    }).mount("#v-if")
+</script>
+</html>

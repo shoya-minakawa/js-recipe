@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="v-for-push">
+        <h3>v-for（配列に追加）</h3>
+        <button v-on:click="addAnimal">追加</button>
+        <div v-for="animal in animals">{{ animal }}</div>
+    </section>
+</body>
+<script src="https://unpkg.com/vue@3.2.20"></script>
+<script>
+    //配列の内容を表示させるための機能
+    //配列の内容が変わると、v-for で表示している要素も変化
+    //配列に新しい要素を追加するには、配列.push(新しい要素)
+
+    Vue.createApp({
+    data() {
+        return {
+        animals: ["ふらみんご", "ごりら", "らいおん"],
+        }
+    },
+    methods: {
+        addAnimal: function() {
+        this.animals.push("きりん")
+        },
+    },
+    }).mount("#v-for-push")
+</script>
+</html>

@@ -1,0 +1,22 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    position:absolute;
+}
+
+.one {
+    background-color: aquamarine;
+    top: 100px;
+    left: 200px;
+}
+.two {
+    background-color: greenyellow;
+}
+.three {
+    background-color: grey;
+}
